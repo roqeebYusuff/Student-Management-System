@@ -1,0 +1,149 @@
+mixin navbar
+    header.mb-3
+        .navbar.navbar-expand.navbar-light
+            .container-fluid
+                a(href="#").burger-btn.d-block
+                    i.bi.bi-justify.fs-3
+                button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                    span.navbar-toggler-icon
+                .collapse.navbar-collapse#navbarSupportedContent
+                    ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+                        li.nav-item.dropdown.me-1
+                            a.nav-link.active.dropdown-toggle(href="#" data-bs-toggle="dropdown" aria-expanded="false")
+                                i.bi.bi-envelope.bi-sub.fs-4.text-gray-600
+                            ul.dropdown-menu.dropdown-menu-end(aria-labelledby="dropdownMenuButton")
+                                li
+                                    h6.dropdown-header Mail
+                                li
+                                    a.dropdown-item(href="#") No new mail
+                        li.nav-item.dropdown.me-3
+                            a.nav-link.active.dropdown-toggle(href="#" data-bs-toggle="dropdown" aria-expanded="false")                                
+                                i.bi.bi-bell.bi-sub.fs-4.text-gray-600
+                            ul.dropdown-menu.dropdown-menu-end(aria-labelledby="dropdownMenuButton")
+                                li
+                                    h6.dropdown-header Notifications
+                                li
+                                    a.dropdown-item No notification available
+                    .dropdown
+                        a(href="#" data-bs-toggle="dropdown" aria-expanded="false")
+                            .user-menu.d-flex
+                                .user-name.text-end.me-3
+                                    h6.mb-0.text-gray-600 #{data.name}
+                                    p.mb-0.text-sm.text-gray-600 #{data.type}
+                                .user-img.d-flex.align-items-center
+                                    .avatar.avatar-md
+                                        img(src="/images/faces/1.jpg")
+                        ul.dropdown-menu.dropdown-menu-end(aria-labelledby="dropdownMenuButton")
+                            li
+                                h6.dropdown-header Hello, John!
+                            li
+                                a.dropdown-item(href="#")
+                                    i.icon-mid.bi.bi-person.me-2
+                                    span My Profile
+                                
+                            li
+                                a.dropdown-item(href="#")
+                                    i.icon-mid.bi.bi-gear.me-2
+                                    span Settings
+                            li
+                                a.dropdown-item(href="#")
+                                    i.icon-mid.bi.bi-wallet.me-2 
+                                    span Wallet
+                            li
+                                hr.dropdown-divider
+                            li
+                                a.dropdown-item(href="#")
+                                    i.icon-mid.bi.bi-box-arrow-left.me-2 
+                                    span Logout
+                                
+mixin footer
+    .footer.clearfix.mb-0.text-muted
+        .float-start
+            p 2021 &copy; Roqeebdev-dotcom
+        .float-end
+            p all rights reserved
+
+mixin sidebar
+    .active#sidebar
+        .sidebar-wrapper.active
+            .sidebar-header
+              .d-flex.justify-content-between
+                .logo
+                  a(href="index.html")
+                    img(src="/images/logo/logo.png" alt="Logo" srcset="")        
+                .toggler
+                  a(href="#").sidebar-hide.d-xl-none.d-block
+                    i.bi.bi-x.bi-middle                
+            .sidebar-menu
+              ul.menu
+                li.sidebar-title Menu
+                li.sidebar-item.active
+                  a(href="index.html").sidebar-link
+                    i.bi.bi-grid-fill
+                    span Dashboard
+                li.sidebar-item.has-sub
+                    a(href="#").sidebar-link
+                        i.bi.bi-stack
+                        span Components                      
+                    ul.submenu
+                        li.submenu-item
+                            a(href="component-alert.html") Alert
+                        li.submenu-item
+                            a(href="component-alert.html") Badge
+                        li.submenu-item
+                            a(href="component-alert.html") Breadcrumb
+                        li.submenu-item
+                            a(href="component-alert.html") Button
+                        li.submenu-item
+                            a(href="component-alert.html") Card
+                        li.submenu-item
+                            a(href="component-alert.html") Carousel
+                        li.submenu-item
+                            a(href="component-alert.html") Dropdown
+                        li.submenu-item
+                            a(href="component-alert.html") List Group
+                        li.submenu-item
+                            a(href="component-alert.html") Modal
+                        li.submenu-item
+                            a(href="component-alert.html") Navs
+                        li.submenu-item
+                            a(href="component-alert.html") Pagination
+                        li.submenu-item
+                            a(href="component-alert.html") Progress
+                        li.submenu-item
+                            a(href="component-alert.html") Spinner
+                        li.submenu-item
+                            a(href="component-alert.html") Tooltip
+                li.sidebar-item.has-sub
+                    a(href="#").sidebar-link
+                        i.bi.bi-collection-fill
+                        span Extra Components
+                    ul.submenu
+                        li.submenu-item
+                            a(href="extra-component-avatar.html") Avatar
+                        li.submenu-item
+                            a(href="extra-component-avatar.html") Sweet Alert
+                        li.submenu-item
+                            a(href="extra-component-avatar.html") Toastify
+                        li.submenu-item
+                            a(href="extra-component-avatar.html") Divider
+                li.sidebar-item
+                    a(href="form-layout.html").sidebar-link
+                        i.bi.bi-file-earmark-medical-fill
+                        span Form Layout
+                li.sidebar-item
+                    a(href="table-datatable.html").sidebar-link
+                        i.bi.bi-file-earmark-spreadsheet-fill
+                        span Datatable
+                li.sidebar-title Extra UI
+                li.sidebar-item.has-sub
+                    a(href="#").sidebar-link
+                        i.bi.bi-pentagon-fill
+                        span Widgets
+                    ul.submenu
+                        li.submenu-item
+                            a(href="ui-widgets-chatbox.html") Chatbox
+                        li.submenu-item
+                            a(href="ui-widgets-pricing.html") Pricing
+                        li.submenu-item
+                            a(href="ui-widgets-todolist.html") To-do List

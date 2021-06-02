@@ -1,5 +1,16 @@
 extends layout
+include layouts/layouts
+include pages/dashboard
 
 block content
-  h1= title
-  p Welcome to #{title}
+      #app
+        +sidebar
+         
+        #main.layout-navbar
+          +navbar
+
+          #main-content
+            +dashboard
+
+            footer
+              +footer

@@ -5,11 +5,22 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= title
-    link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
-    link(rel="stylesheet", href="/stylesheets/all.min.css")
-    link(rel="stylesheet", href="/stylesheets/style.css")
+    block styles
+    link(rel="stylesheet", href="/stylesheets/bootstrap.css")
+    link(rel="stylesheet", href="/vendors/iconly/bold.css")
+    link(rel="stylesheet", href="/vendors/perfect-scrollbar/perfect-scrollbar.css")
+    link(rel="stylesheet", href="/vendors/bootstrap-icons/bootstrap-icons.css")
+    link(rel="stylesheet", href="/stylesheets/app.css")
+    //- link(rel="stylesheet", href="/stylesheets/all.min.css")
+    link(rel="stylesheet", href="/stylesheets/a.css")
   body 
     block content
-    script(src="/javascripts/jquery-3.6.0.min.js")
+
+    block scripts
+    script(src="/vendors/perfect-scrollbar/perfect-scrollbar.min.js") 
     script(src="/javascripts/bootstrap.bundle.min.js")
-    script(src="/javascripts/bootstrap.min.js") 
+    script(src="/vendors/apexcharts/apexcharts.js") 
+    script(src="/javascripts/dashboard.js")
+    script(src="/javascripts/main.js")
+    //- script(src="/javascripts/jquery-3.6.0.min.js")
+    //- script(src="/javascripts/bootstrap.min.js") 

@@ -1,0 +1,262 @@
+extends layout
+
+append scripts 
+  script(src="/vendors/apexcharts/apexcharts.js") 
+
+block content
+      #app
+        .active#sidebar
+          .sidebar-wrapper.active
+            .sidebar-header
+              .d-flex.justify-content-between
+                .logo
+                  a(href="index.html")
+                    img(src="/images/logo/logo.png" alt="Logo" srcset="")        
+                .toggler
+                  a(href="#").sidebar-hide.d-xl-none.d-block
+                    i.bi.bi-x.bi-middle                
+            .sidebar-menu
+              ul.menu
+                li.sidebar-title Menu
+                li.sidebar-item.active
+                  a(href="index.html").sidebar-link
+                    i.bi.bi-grid-fill
+                    span Dashboard
+                li.sidebar-item.has-sub
+                  a(href="#").sidebar-link
+                    i.bi.bi-stack
+                    span Components                      
+                  ul.submenu
+                    li.submenu-item
+                      a(href="component-alert.html") Alert
+                    li.submenu-item
+                      a(href="component-alert.html") Badge
+                    li.submenu-item
+                      a(href="component-alert.html") Breadcrumb
+                    li.submenu-item
+                      a(href="component-alert.html") Button
+                    li.submenu-item
+                      a(href="component-alert.html") Card
+                    li.submenu-item
+                      a(href="component-alert.html") Carousel
+                    li.submenu-item
+                      a(href="component-alert.html") Dropdown
+                    li.submenu-item
+                      a(href="component-alert.html") List Group
+                    li.submenu-item
+                      a(href="component-alert.html") Modal
+                    li.submenu-item
+                      a(href="component-alert.html") Navs
+                    li.submenu-item
+                      a(href="component-alert.html") Pagination
+                    li.submenu-item
+                      a(href="component-alert.html") Progress
+                    li.submenu-item
+                      a(href="component-alert.html") Spinner
+                    li.submenu-item
+                      a(href="component-alert.html") Tooltip
+                li.sidebar-item.has-sub
+                  a(href="#").sidebar-link
+                      i.bi.bi-collection-fill
+                      span Extra Components
+                  ul.submenu
+                    li.submenu-item
+                      a(href="extra-component-avatar.html") Avatar
+                    li.submenu-item
+                      a(href="extra-component-avatar.html") Sweet Alert
+                    li.submenu-item
+                      a(href="extra-component-avatar.html") Toastify
+                    li.submenu-item
+                      a(href="extra-component-avatar.html") Divider
+                li.sidebar-item
+                  a(href="form-layout.html").sidebar-link
+                    i.bi.bi-file-earmark-medical-fill
+                    span Form Layout
+                li.sidebar-item
+                  a(href="table-datatable.html").sidebar-link
+                    i.bi.bi-file-earmark-spreadsheet-fill
+                    span Datatable
+                li.sidebar-title Extra UI
+                li.sidebar-item.has-sub
+                  a(href="#").sidebar-link
+                    i.bi.bi-pentagon-fill
+                    span Widgets
+                  ul.submenu
+                    li.submenu-item
+                      a(href="ui-widgets-chatbox.html") Chatbox
+                    li.submenu-item
+                      a(href="ui-widgets-pricing.html") Pricing
+                    li.submenu-item
+                      a(href="ui-widgets-todolist.html") To-do List
+         
+        #main
+            header.mb-3
+              a(href="#").burger-btn.d-block.d-xl-none
+                i.bi.bi-justify.fs-3
+
+            .page-heading
+              h3 Profile Statistics
+            .page-content
+              section.row
+                .col-12.col-lg-9
+                  .row
+                    .col-6.col-lg-3.col-md-6
+                      .card
+                        .card-body.px-3.py-4-5
+                          .row
+                            .col-md-4
+                              .stats-icon.purple
+                                i.iconly-boldShow
+                            .col-md-8
+                              h6.text-muted.font-semibold Profile Views
+                              h6.font-extrabold.mb-0 112.000
+                    .col-6.col-lg-3.col-md-6
+                      .card
+                        .card-body.px-3.py-4-5
+                          .row
+                            .col-md-4
+                              .stats-icon.blue
+                                i.iconly-boldProfile
+                            .col-md-8
+                              h6.text-muted.font-semibold Followers
+                              h6.font-extrabold.mb-0 183.000
+                    .col-6.col-lg-3.col-md-6
+                      .card
+                        .card-body.px-3.py-4-5
+                          .row
+                            .col-md-4
+                              .stats-icon.green
+                                i.iconly-boldAdd-User
+                            .col-md-8
+                              h6.text-muted.font-semibold Followers
+                              h6.font-extrabold.mb-0 80.000
+                    .col-6.col-lg-3.col-md-6
+                      .card
+                        .card-body.px-3.py-4-5
+                          .row
+                            .col-md-4
+                              .stats-icon.red
+                                i.iconly-boldBookmark
+                            .col-md-8
+                              h6.text-muted.font-semibold Saved Post
+                              h6.font-extrabold.mb-0 112   
+                  .row
+                    .col-12
+                      .card
+                        .card-header
+                          h4 Profile Visit
+                        .card-body
+                          #chart-profile-visit
+                  .row
+                    .col-12.col-xl-4
+                      .card
+                        .card-header 
+                          h4 Profile Visit 
+                        .card-body
+                          .row
+                            .col-6
+                              .d-flex.align-items-center
+                                svg.bi.text-primary(width="32" height="32" fill="blue" style="width:10px")
+                                    use(xlink:href="/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill")
+                                h5.mb-0.ms-3 Europe
+                            .col-6
+                              h5.mb-0 862
+                            .col-12
+                              #chart-europe
+                          .row
+                            .col-6
+                              .d-flex.align-items-center
+                                svg.bi.text-success(width="32" height="32" fill="blue" style="width:10px")
+                                    use(xlink:href="/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill")
+                                h5.mb-0.ms-3 America
+                            .col-6
+                              h5.mb-0 375
+                            .col-12
+                              #chart-america
+                          .row
+                            .col-6
+                              .d-flex.align-items-center
+                                svg.bi.text-danger(width="32" height="32" fill="blue" style="width:10px")
+                                    use(xlink:href="/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill")
+                                h5.mb-0.ms-3 Indonesia
+                            .col-6
+                              h5.mb-0 1025
+                            .col-12
+                              #chart-indonesia
+
+                    .col-12.col-xl-8
+                      .card
+                        .card-header
+                          h4 Latest Comments
+                        .card-body 
+                          .table-responsive
+                            table.table.table-hover.table-lg
+                              thead
+                                tr
+                                  th Name
+                                  th Comment
+                              tbody
+                                tr
+                                  td.col-3
+                                    .d-flex.align-items-center
+                                      .avatar.avatar-md
+                                        img(src="/images/faces/5.jpg")
+                                      .font-bold.ms-3.mb-0 Si Cantik
+                                  td.col-auto
+                                    p.mb-0 Congratulations on your graduation!
+                                tr
+                                  td.col-3
+                                    .d-flex.align-items-center
+                                      .avatar.avatar-md
+                                        img(src="/images/faces/2.jpg")
+                                      .font-bold.ms-3.mb-0 Si Ganteng
+                                  td.col-auto
+                                    p.mb-0 Wow amazing design! Can you make another tutorial for this design?
+                .col-12.col-lg-3
+                      .card 
+                        .card-body.py-4.px-5 
+                          .d-flex.align-items-center 
+                            .avatar.avatar-xl 
+                              img(src="/images/faces/1.jpg" alt="Face 1")
+                            .ms-3.name
+                              h5.font-bold John Duck
+                              h6.text-muted.mb-0 @johnducky
+                      .card 
+                        .card-header 
+                          h4 Recent Message 
+                        .card-content.pb-4
+                          .recent-message.d-flex.px-4.py-3
+                            .avatar.avatar-lg
+                              img(src="/images/faces/4.jpg")
+                            .name.ms-4 
+                              h5.mb-1 Hank Schrader
+                              h6.text-muted.mb-0 @johnducky
+                          .recent-message.d-flex.px-4.py-3
+                            .avatar.avatar-lg
+                              img(src="/images/faces/5.jpg")
+                            .name.ms-4 
+                              h5.mb-1 Dean Winchester
+                              h6.text-muted.mb-0 @imdean
+                          .recent-message.d-flex.px-4.py-3
+                            .avatar.avatar-lg
+                              img(src="/images/faces/1.jpg")
+                            .name.ms-4 
+                              h5.mb-1 John Dodol
+                              h6.text-muted.mb-0 @dodoljohn
+                          .px-4
+                            .btn.btn-block.btn-xl.btn-light-primary.font-bold.mt-3 Start Conversation
+                      .card
+                        .card-header 
+                          h4 Visitors Profile
+                        .card-body
+                          #chart-visitors-profile
+            footer
+              .footer.clearfix.mb-0.text-muted
+                .float-start
+                  p 2021 &copy; Mazer
+                .float-end
+                  p Crafted with 
+                    span.text-danger 
+                      i.bi.bi-heart by 
+                        a(href="http://ahmadsaugi.com") A. Saugi
+    

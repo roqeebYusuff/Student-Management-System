@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet", href="/stylesheets/bootstrap.css")
+    link(rel="stylesheet", href="/vendors/iconly/bold.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body 
+      .container.login.bigbox
+        .container.smallbox.col-lg-5.col-sm-8
+          h1.text-center.mb-4.text-white= title 
+          .mb-3
+            label.form-label(for="exampleFormControlInput1") Email address
+            input.form-control(type="email" id="exampleFormControlInput1" placeholder="name@example.com")
+
+          .mb-3
+            label.form-label(for="exampleFormControlTextarea1") Example textarea
+            textarea.form-control(id="exampleFormControlTextarea1" rows="3")
+          .text-end
+            button.btn.btn-primary(type="submit") Submit
+
+      script(src="/javascripts/bootstrap.bundle.min.js")

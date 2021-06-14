@@ -1,7 +1,7 @@
 require('./user');
 const mongoose = require('mongoose');
 
-const dbURI = 'mongodb://localhost/school';
+let dbURI = 'mongodb://localhost/school';
 
 if(process.env.NODE_ENV === 'production')
 {

@@ -2,7 +2,7 @@ body {
   font-family: "Cabin", Arial, sans-serif;
   color: #fff !important;
   background-color: #130338 !important;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .login.bigbox

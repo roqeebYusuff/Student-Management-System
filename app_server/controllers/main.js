@@ -1,9 +1,9 @@
 /* GET home page. */
 const index = (req, res) => {
-    res.render('index',{ 
+    res.render('pages/dashboard/index',{ 
         title: 'Dashboard',
         data: {
-            name: 'John Ducky',
+            name: 'Phillip Wayne',
             type: 'Administrator'
         }
     });

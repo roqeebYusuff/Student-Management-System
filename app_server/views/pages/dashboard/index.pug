@@ -1,0 +1,16 @@
+extends ../../layout
+include ../../layouts/layouts
+//- include ../../dashboard
+
+block content
+      #app
+        include ../../layouts/sidebar
+         
+        #main.layout-navbar
+          include ../../layouts/navbar
+
+          #main-content
+            include dashboard
+
+            footer
+              include ../../layouts/footer

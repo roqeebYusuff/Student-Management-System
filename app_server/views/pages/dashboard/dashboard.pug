@@ -1,0 +1,145 @@
+.page-heading
+    .page-title
+        .row
+            .col-12.col-md-6.order-md-1.order-first
+                h3= title
+                //- p.text-subtitle.text-muted Navbar will appear in top of the page.
+            .col-12.col-md-6.order-md-2.order-last
+                nav(aria-label="breadcrumb").breadcrumb-header.float-start.float-lg-end
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            a(href="index.html") Dashboard
+                        li.breadcrumb-item.active(aria-current="page") Layout Vertical Navbar
+    section.section
+        .page-content
+          section.row
+            .col-12.col-lg-12
+              .row
+                .col-6.col-lg-3.col-md-6
+                  .card.shadow-3
+                    .card-body.px-3.py-4-5
+                      .row
+                        .col-md-4
+                          .stats-icon.grad1
+                            i.iconly-boldShow
+                        .col-md-8
+                          h6.text-muted.font-semibold Lecturers
+                          h6.font-extrabold.mb-0 112.000
+                .col-6.col-lg-3.col-md-6
+                  .card.shadow-3
+                    .card-body.px-3.py-4-5
+                      .row
+                        .col-md-4
+                          .stats-icon.grad2
+                            i.iconly-boldProfile
+                        .col-md-8
+                          h6.text-muted.font-semibold Students
+                          h6.font-extrabold.mb-0 183.000
+                .col-6.col-lg-3.col-md-6
+                  .card.shadow-3
+                    .card-body.px-3.py-4-5
+                      .row
+                        .col-md-4
+                          .stats-icon.grad3
+                            i.iconly-boldAdd-User
+                        .col-md-8
+                          h6.text-muted.font-semibold Parents
+                          h6.font-extrabold.mb-0 80.000
+                .col-6.col-lg-3.col-md-6
+                  .card.shadow-3
+                    .card-body.px-3.py-4-5
+                      .row
+                        .col-md-4
+                          .stats-icon.grad4
+                            i.iconly-boldBookmark
+                        .col-md-8
+                          h6.text-muted.font-semibold Courses
+                          h6.font-extrabold.mb-0 112   
+              .row
+                .col-12.col-lg-6.col-md-12
+                  .card.shadow-3
+                    .card-header
+                      h4 Admission Stat
+                    .card-body
+                      #chart-profile-visit
+                .col-12.col-lg-6.col-md-12
+                  .card.shadow-3
+                    .card-header
+                      h4 Result comparison
+                    .card-body
+                      #chart-profile-visit
+              .row
+                .col-12.col-xl-4
+                  .card.shadow-3
+                    .card-header 
+                      h4 Event Calendar 
+                    .card-body
+                .col-12.col-xl-4
+                  .card.shadow-3
+                    .card-header
+                      h4 Something
+                    .card-body 
+                      .table-responsive
+                        table.table.table-hover.table-lg
+                          thead
+                            tr
+                              th Name
+                              th Comment
+                          tbody
+                            tr
+                              td.col-3
+                                .d-flex.align-items-center
+                                  .avatar.avatar-md
+                                    img(src="/images/faces/5.jpg")
+                                  .font-bold.ms-3.mb-0 Si Cantik
+                              td.col-auto
+                                p.mb-0 Congratulations on your graduation!
+                            tr
+                              td.col-3
+                                .d-flex.align-items-center
+                                  .avatar.avatar-md
+                                    img(src="/images/faces/2.jpg")
+                                  .font-bold.ms-3.mb-0 Si Ganteng
+                              td.col-auto
+                                p.mb-0 Wow amazing design! Can you make another tutorial for this design?
+                .col-12.col-xl-4
+                  .card.shadow-3
+                    .card-header 
+                      h4 Notice Board 
+                    .card-body
+                      .col 
+                        .something Something
+                        .hr 
+                      .col 
+                        div Blah blah blah blah blah blah blah
+              .row
+                .col-12.col-lg-6
+                  .card.shadow-3
+                    .card-header
+                      h4 Result Comparison
+                    .card-body 
+                      #bar
+                .col-12.col-lg-6
+                  .card.shadow-3
+                    .card-header 
+                      h4 Event Calendar 
+                    .card-body
+              .row
+                .col-12.col-lg-4
+                  .card.shadow-3
+                    .card-header
+                      h4 Something
+                    .card-body 
+                      span Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eveniet sit rem libero impedit tempora consequatur harum, maxime laboriosam culpa natus quia unde exercitationem dicta, incidunt neque eius dolorum quisquam?
+                .col-12.col-lg-4.col-md-3
+                  .card.shadow-3 
+                    .card-header 
+                      h4 Bar Chart 
+                    .card-body.text-justify.pb-4
+                      span Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, impedit aperiam quaerat eligendi ex facilis modi similique itaque numquam accusamus ipsa molestiae! Porro eum illum laudantium, fuga adipisci ea cumque?
+                .col-12.col-lg-4
+                  .card.shadow-3
+                    .card-header 
+                      h4 Birthday
+                    .card-body
+                      #chart-visitors-profile                 

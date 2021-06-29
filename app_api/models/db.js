@@ -8,7 +8,8 @@ if(process.env.NODE_ENV === 'production')
     dbURI = process.env.MONGODB_URI;
 }
 
-mongoose.connect(dbURI, {useNewUrlParser: true});
+// mongoose.set('useUnifiedTopology', true);
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 mongoose.connection.on('connected', () => {
     console.log(`Mongoose connected to ${dbURI}`);

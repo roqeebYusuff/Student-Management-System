@@ -1,6 +1,7 @@
 header.mb-3
     .navbar.navbar-expand.navbar-light
         .container-fluid
+            .error= error
             a(href="#").burger-btn.d-block
                 i.bi.bi-justify.fs-3
             button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
@@ -20,13 +21,13 @@ header.mb-3
                         .user-menu.d-flex
                             .user-name.text-end.me-3
                                 h6.mb-0.text-gray-600 #{data.name}
-                                p.mb-0.text-sm.text-gray-600 #{data.type}
+                                p.mb-0.text-sm.text-gray-600 Admin
                             .user-img.d-flex.align-items-center
                                 .avatar.avatar-md
                                     img(src="/images/faces/1.jpg")
                     ul.dropdown-menu.dropdown-menu-end(aria-labelledby="dropdownMenuButton")
                         li
-                            h6.dropdown-header Hello, John!
+                            h6.dropdown-header Hello, #{data.name}!
                         li
                             a.dropdown-item(href="#")
                                 i.icon-mid.bi.bi-person.me-2

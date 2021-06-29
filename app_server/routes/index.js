@@ -12,12 +12,5 @@ router.get('/student', ctrlStudent.students);
 
 /* Auth Page */
 router.get('/login', ctrlAuth.login);
-router.get('/register', ctrlAuth.register);
-
-
-
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
 
 module.exports = router;

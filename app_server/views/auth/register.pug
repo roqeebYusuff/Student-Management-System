@@ -6,20 +6,90 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= title
     link(rel="stylesheet", href="/stylesheets/bootstrap.css")
-    link(rel="stylesheet", href="/vendors/iconly/bold.css")
+    link(rel="stylesheet", href="/vendors/toast/iziToast.min.js")
+    link(rel="stylesheet", href="/vendors/bootstrap-icons/bootstrap-icons.css")
     link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="/stylesheets/app.css")
   body 
       .container.login.bigbox
-        .container.smallbox.col-lg-5.col-sm-8
-          h1.text-center.mb-4.text-white= title 
-          .mb-3
-            label.form-label(for="exampleFormControlInput1") Email address
-            input.form-control(type="email" id="exampleFormControlInput1" placeholder="name@example.com")
+        .container.smallbox.col-lg-6.col-12
+          h1.text-center.mb-4.auth-title= title
+          form(id="form")
+            .form-group.position-relative.has-icon-left.mb-4.col
+              input.form-control.form-control-xl.name(type="text" id="name" name="name" placeholder="Name")
+              .name-error
+              .form-control-icon
+                i.bi.bi-person
+            .form-group.position-relative.has-icon-left.mb-4.col
+              input.form-control.form-control-xl.email(type="email" id="email" name="email" placeholder="Email")
+              .email-error
+              .form-control-icon
+                i.bi.bi-envelope
+            .form-group.position-relative.has-icon-left.mb-4
+              input.form-control.form-control-xl.password(type="password" id="password" name="password" placeholder="Password")
+              .email-error
+              .form-control-icon
+                i.bi.bi-shield-lock
+            button.btn.btn-primary.btn-block.btn-lg.shadow-lg.mt-2(type="submit" onclick="signup()") Sign Up
+          .text-center.mt-5.text-lg.fs-4
+            p.text-gray-600 Already have an account? 
+              a(href="/login" class="font-bold") Log in.
+      script(src="/javascripts/jquery.min.js")
+      script(src="/javascripts/jquery.validate.js")
+      script(src="/vendors/toast/iziToast.min.js")
+      script. 
+        $('#form').validate({
+            rules: {
+              name: "required",
+              email: {
+                required: true,
+                email: true
+              },
+              password: {
+                required: true
+              }
+            }
+        });
+        function signup(){
+            $('#form').on('submit', async function(e){
+                e.preventDefault();
+    
+                $('.email-error').text('');
+                $('.password-error').text('');
 
-          .mb-3
-            label.form-label(for="exampleFormControlTextarea1") Example textarea
-            textarea.form-control(id="exampleFormControlTextarea1" rows="3")
-          .text-end
-            button.btn.btn-primary(type="submit") Submit
+                if(!$('#form').valid()){
+                    return;
+                }
 
-      script(src="/javascripts/bootstrap.bundle.min.js")
+                const email = $('.email').val();
+                const name = $('.name').val();
+                const password = $('.password').val();
+
+                var frmData = {name,email,password};
+    
+                //Send data to server
+                var request = $.ajax({
+                    url: '/signup',
+                    method: "POST",
+                    dataType: 'json',
+                    data: frmData
+                });
+                
+                request.done(function (response){
+                    if(response.user){
+                      location.assign('/');
+                    }
+                });
+                request.fail(function (response){
+                    console.log(`Error: ${JSON.stringify(response)}`);
+                });
+                request.always(function (response){
+                    if(response.error){
+                      iziToast.error({
+                          title: 'Error',
+                          message: response.error.email,
+                      });
+                    }
+                });
+            });
+        }

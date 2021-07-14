@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    block head
+      meta(charset="utf-8")
+      meta(name="viewport", content="width=device-width")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="x-apple-disable-message-reformatting")
+    //-   link(rel="stylesheet", href="style.css", data-inline)
+  body
+    p Hello, #{name},
+    p We heard that you lost your password. Sorry about that! But don't worry! You can use the button below to reset your password
+    br
+    a(href=`${link}`) Reset your password
+    br
+    If you don't use this link within 1 hour, it will expire.

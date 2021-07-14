@@ -44,7 +44,8 @@ const indexRender = (req, res, responseBody) => {
 }
 
 const index = (req, res) => {
-    const path = `/api/auth/60c6814daf69c2bc4244fde0`;
+    //Use id to check for existence
+    const path = `/api/auth/60cf79ded629054a4c1db253`;
     const requestOptions = {
         url: `${apiOptions.server}${path}`,
         method: 'GET',

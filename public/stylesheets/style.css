@@ -1,7 +1,5 @@
 body {
   font-family: "Cabin", Arial, sans-serif;
-  color: #fff !important;
-  background-color: #130338 !important;
   height: 100vh;
 }
 
@@ -17,23 +15,24 @@ body {
 .login .smallbox
 {
   position: relative;
-  background: #7b5206;
   border-radius: 10px;
-  box-shadow: 0px 2px 20px 0px rgba(0,0,0);
   padding: 40px;
 }
 
-.login button
+#email-error, 
+#password-error,
+#name-error, 
+.email-error, 
+.password-error,
+.name-error
 {
-  background: #130338;
-  border: 1px solid #130338;
-  border-radius: 30px;
-  width: 100px;
-  box-shadow: 0px 2px 20px 0px rgb(219, 243, 1);
+  color: red;
+  position: absolute;
 }
 
-.login button:hover
-{
-  background: #130338;
-  border-color: #130338;
+.form-control-icon.showToggle{
+  right: 10px;
+  left: unset !important;
+  /* display: none; */
+  cursor: pointer;
 }

@@ -31,8 +31,8 @@ userSchema.methods.validPassword = function (password) {
     return this.hash === hash;
 };
 
-
-userSchema.methods.generateJwt = function () {
+// Generate JWT with user id
+userSchema.methods.generateJwt = function (id) {
     const expiry = new Date();
     expiry.setDate(expiry.getDate() + 7);
 

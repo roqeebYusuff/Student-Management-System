@@ -57,7 +57,7 @@ const loginPost = (req, res) => {
                 res.json(body);
             }
 
-            else if(statusCode === 401 || statusCode === 400){
+            else if(statusCode === 401 || statusCode === 400 || statusCode === 404){
                 res.json(body);
             }
             else{

@@ -107,7 +107,6 @@ const login = (req, res) => {
         }
         else{
             const error = errorHandler(info);
-            console.log("Got to error");
             res
                 .status(401)
                 .json({error});
@@ -156,6 +155,8 @@ const forgot = (req, res) => {
     });
 }
 
+
+//Request forgot password
 const reset = (req, res) => {
     email = req.params.email;
     emailCheck(email, function (error, user){

@@ -139,7 +139,6 @@ const forgotPost = (req, res)=> {
             console.log(`Body: ${body}`);
             if(statusCode == 200)
             {
-                console.log('Got here');
                 res.json(body);
 
                 //Send Email

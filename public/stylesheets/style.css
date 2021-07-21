@@ -1,6 +1,6 @@
 body {
   font-family: "Cabin", Arial, sans-serif;
-  height: 100vh;
+  height: 100vh !important;
 }
 
 .login.bigbox
@@ -33,6 +33,5 @@ body {
 .form-control-icon.showToggle{
   right: 10px;
   left: unset !important;
-  /* display: none; */
   cursor: pointer;
 }

@@ -10,55 +10,54 @@
                         i.bi.bi-x.bi-middle                
         .sidebar-menu
             ul.menu
-                li.sidebar-title Menu
-                li.sidebar-item
+                li.sidebar-item(class=(title === "Dashboard" ? "active" : undefined))
                     a(href="/").sidebar-link
                         i.bi.bi-grid-fill
                         span Dashboard
-                li.sidebar-item.has-sub.active
+                li.sidebar-item.has-sub
                     a(href="#").sidebar-link
                         i.bi.bi-stack
                         span Admin                      
-                    ul.submenu.active
-                        li.submenu-item.active
-                            a(href="/student") Something
+                    ul.submenu
                         li.submenu-item
-                            a(href="/student") View Admins
+                            a(href="#") Something
                         li.submenu-item
-                            a(href="/student") Permissions
-                li.sidebar-item.has-sub
+                            a(href="#") View Admins
+                        li.submenu-item
+                            a(href="#") Permissions
+                li.sidebar-item.has-sub(class=(category === "Students" ? "active" : undefined))
                     a(href="#").sidebar-link
                         i.bi.bi-collection-fill
                         span Students
-                    ul.submenu
+                    ul.submenu(class=(category === "Students" ? "active" : undefined))
+                        li.submenu-item(class=(submenu === "AllStudents" ? "active" : undefined))
+                            a(href="/allstudents") All Students
                         li.submenu-item
-                            a(href="extra-component-avatar.html") Admission
+                            a(href="/addstudent") Add Student
                         li.submenu-item
-                            a(href="extra-component-avatar.html") View Students
-                        li.submenu-item
-                            a(href="extra-component-avatar.html") View Results
-                li.sidebar-item.has-sub
+                            a(href="#") View Result
+                li.sidebar-item.has-sub(class=(title === "Lecturers" ? "active" : undefined))
                     a(href="#").sidebar-link
                         i.bi.bi-collection-fill
                         span Lecturers
                     ul.submenu
                         li.submenu-item
-                            a(href="extra-component-avatar.html") Admission
+                            a(href="#") Admission
                         li.submenu-item
-                            a(href="extra-component-avatar.html") View Students
+                            a(href="#") View Students
                         li.submenu-item
-                            a(href="extra-component-avatar.html") View Results
+                            a(href="#") View Results
                 li.sidebar-item.has-sub
                     a(href="#").sidebar-link
                         i.bi.bi-collection-fill
                         span Parents
                     ul.submenu
                         li.submenu-item
-                            a(href="extra-component-avatar.html") Admission
+                            a(href="#") Admission
                         li.submenu-item
-                            a(href="extra-component-avatar.html") View Students
+                            a(href="#") View Students
                         li.submenu-item
-                            a(href="extra-component-avatar.html") View Results
+                            a(href="#") View Results
                 li.sidebar-item
                     a(href="form-layout.html").sidebar-link
                         i.bi.bi-file-earmark-medical-fill

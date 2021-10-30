@@ -2,6 +2,7 @@ const request = require('request');
 var mailer = require('../../helpers/mailer');
 const { email } = require('../../helpers/mail');
 const { transporter } = require('../../helpers/mail');
+
 const apiOptions = {
     server: 'http://localhost:3000'
 }
@@ -30,7 +31,7 @@ const showError = (req, res, status) => {
     });
 }
 
-const login = (req,res) => {
+const login = (req,res) => {    
     res.render('auth/login', {title: 'Login'});
 }
 
@@ -52,13 +53,17 @@ const loginPost = (req, res) => {
     else{
         request(requestOptions, (err, {statusCode}, body)=> {
             if(statusCode === 200){
+                //save session
+                roq = req.session;
+                roq.yus = body.user;
+
                 const token = body.token;
-                res.cookie('jwt', token, {httpOnly: true, maxAge: 24*60*60*1000});
-                res.json(body);
+                res.cookie('jwt', token, {httpOnly: true, maxAge: 30*60*1000});
+                return res.json({status: 200, body});
             }
 
-            else if(statusCode === 401 || statusCode === 400 || statusCode === 404){
-                res.json(body);
+            else if(statusCode === 401){
+                return res.json({status: 401, body});
             }
             else{
                 showError(req, res, statusCode);
@@ -90,14 +95,17 @@ const registerPost = (req, res) => {
     else{
         request(requestOptions, (err, {statusCode}, body) =>{
             if(statusCode === 201){
+                //save session
+                roq = req.session;
+                roq.yus = body.user;
+
                 const token = body.token;
-                res.cookie('jwt', token, {httpOnly: true, maxAge: 24*60*60*1000});
-                res.json(body);
+                res.cookie('jwt', token, {httpOnly: true, maxAge: 30*60*1000});
+                return res.json({status: 200, body});
             }
 
             else if(statusCode === 401 || statusCode=== 400) {
-                // res.redirect('');
-                res.json(body);
+                return res.json({status: 401, body});
             }
 
             else{
@@ -109,6 +117,7 @@ const registerPost = (req, res) => {
 
 //Logout
 const logout = (req,res) => {
+    req.session.destroy;
     res.cookie('jwt','',{maxAge: 1});
     res.redirect('/login');
 }

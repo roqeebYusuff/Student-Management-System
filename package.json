@@ -17,6 +17,7 @@
     "email-templates": "^8.0.7",
     "express": "~4.16.1",
     "express-jwt": "^6.0.0",
+    "express-session": "^1.17.2",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
@@ -28,6 +29,7 @@
     "passport-local": "^1.0.0",
     "pug": "^3.0.2",
     "q": "^1.5.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "sessionstorage-for-nodejs": "^1.0.0"
   }
 }

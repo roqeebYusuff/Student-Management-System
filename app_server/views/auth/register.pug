@@ -34,62 +34,9 @@ html(lang="en")
           .text-center.mt-5.text-lg.fs-4
             p.text-gray-600 Already have an account? 
               a(href="/login" class="font-bold") Log in.
+
       script(src="/javascripts/jquery.min.js")
       script(src="/javascripts/jquery.validate.js")
-      script(src="/vendors/toast/iziToast.min.js")
-      script. 
-        $('#form').validate({
-            rules: {
-              name: "required",
-              email: {
-                required: true,
-                email: true
-              },
-              password: {
-                required: true
-              }
-            }
-        });
-        function signup(){
-            $('#form').on('submit', async function(e){
-                e.preventDefault();
-    
-                $('.email-error').text('');
-                $('.password-error').text('');
-
-                if(!$('#form').valid()){
-                    return;
-                }
-
-                const email = $('.email').val();
-                const name = $('.name').val();
-                const password = $('.password').val();
-
-                var frmData = {name,email,password};
-    
-                //Send data to server
-                var request = $.ajax({
-                    url: '/signup',
-                    method: "POST",
-                    dataType: 'json',
-                    data: frmData
-                });
-                
-                request.done(function (response){
-                    if(response.user){
-                      location.assign('/');
-                    }
-                });
-                request.fail(function (response){
-                    console.log(`Error: ${JSON.stringify(response)}`);
-                });
-                request.always(function (response){
-                    if(response.error){
-                      iziToast.error({
-                          title: 'Error',
-                          message: response.error.email,
-                      });
-                    }
-                });
-            });
-        }
+      script(src="/javascripts/bootstrap.bundle.min.js")
+      script(src="/vendors/sweetalert2/sweetalert2.all.min.js")
+      script(src="/scripts/main.js")     

@@ -1,19 +1,30 @@
 const express = require('express');
 const router = express.Router();
-const ctrlMain = require('../controllers/main');
+const ctrlMain = require('../controllers/dashboard');
 const ctrlStudent = require('../controllers/student');
 const ctrlAuth = require("../controllers/auth");
 
 // The middleware
 const { requireAuth } = require('./middleware');
 
-// Index Page
+// Dashboard
 router
     .route('/')
     .get(requireAuth, ctrlMain.index); 
 
-//GET STudent page
-router.get('/student', ctrlStudent.students);
+
+
+/* ====================== STUDENTS ====================== */
+
+//All Students
+router
+    .route('/allstudents')
+    .get(requireAuth, ctrlStudent.allstudents);
+
+//Add Student
+router
+    .route('/addstudent')
+    .get(requireAuth, ctrlStudent.addstudent);
 
 /* Auth Page */
 router

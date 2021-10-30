@@ -1,0 +1,51 @@
+.page-heading
+    .page-title
+        .row
+            .col-12.col-md-6.order-md-1.order-first
+                h3 All Students
+            .col-12.col-md-6.order-md-2.order-last
+                nav(aria-label="breadcrumb").breadcrumb-header.float-start.float-lg-end
+                    ol.breadcrumb
+                        li.breadcrumb-item
+                            a(href="/") Dashboard
+                        li.breadcrumb-item.active(aria-current="page") All Students 
+    section.section
+      .card
+        .card-header
+          h4.card-title Table
+        .card-body
+          table.table.table-striped#table1
+            thead
+              tr
+                th Name
+                th Email
+                th Phone 
+                th City
+                th Status
+            tbody
+              tr
+                td Graiden
+                td vehicula.aliquet@semconsequat.co.uk
+                td 076 4820 8838
+                td Offenburg
+                td
+                  span.badge.bg-success Active
+              tr
+                td Dale
+                td fringilla.euismod.enim@quam.ca
+                td 0500 527693
+                td New Quay
+                td
+                  span.badge.bg-success Active
+              tr
+                td Nathaniel
+                td mi.Duis@diam.edu
+                td (012165) 76278
+                td Grumo Appula
+                td
+                  span.badge.bg-danger Inactive
+
+script.
+  // Simple Datatable
+  let table1 = document.querySelector('#table1');
+  let dataTable = new simpleDatatables.DataTable(table1);

@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport');
+const session = require('express-session');
 require('./app_api/models/db');
 require('./app_api/config/passport')
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
+app.use(session({secret: 'sessionStorage', saveUninitialized: true, resave: true}));
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);

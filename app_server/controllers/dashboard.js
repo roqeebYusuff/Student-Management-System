@@ -1,5 +1,6 @@
 const request = require('request');
 
+var sess;
 const apiOptions = {
     server: 'http://localhost:3000'
 }
@@ -31,8 +32,6 @@ const showError = (req, res, status) => {
 /* GET home page. */
 const indexRender = (req, res, responseBody) => {
     let message = null;
-    // console.log(`The body is ${responseBody}`);
-    console.log(responseBody)
     if(!responseBody.length) {
         message = 'No user found';
     }
@@ -45,7 +44,8 @@ const indexRender = (req, res, responseBody) => {
 
 const index = (req, res) => {
     //Use id to check for existence
-    const path = `/api/auth/60cf79ded629054a4c1db253`;
+    roq = req.session
+    const path = `/api/auth/${roq.yus}`;
     const requestOptions = {
         url: `${apiOptions.server}${path}`,
         method: 'GET',

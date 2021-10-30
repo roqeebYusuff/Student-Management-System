@@ -81,7 +81,6 @@ const deleteOne = (req,res) => {
                         .json(err);
                 }
                 else{
-                    console.log("Got to success")
                     res
                         .status(204)
                         .json({"message":"User successfully deleted"})
@@ -89,7 +88,6 @@ const deleteOne = (req,res) => {
             });
     }
     else{
-        console.log("Got here")
         res
             .status(404)
             .json({"message":"No User"});
